@@ -38,7 +38,7 @@ PS: тесты можно было автоматизировать так же 
    "gender": "F",
    "phone": "+74998884433"
    }
-
+   
 2) Поле Gender звписывает любые значения (post/put)
    При отправки post запроса (https://superhero.qa-test.csssr.com/superheroes)
    с body {
