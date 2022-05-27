@@ -12,56 +12,97 @@ PS: тесты можно было автоматизировать так же 
 1) Значение телефона null (post/put)
 
    При отправки post запроса (https://superhero.qa-test.csssr.com/superheroes)
+   
    с body {
+   
    "birthDate": "2019-02-21",
+   
    "city": "New York",
+   
    "fullName": "Doctor Strange",
+   
    "gender": "F",
+   
    "mainSkill": "Magic",
+   
    "phone": "+74998884433"
+   
    }
    
    В ответе приходит body {
+   
    "id": 111,
+   
    "fullName": "Doctor Strange",
+   
    "birthDate": "2019-02-21",
+   
    "city": "New York",
+   
    "mainSkill": "Magic",
+   
    "gender": "F",
+   
    "phone": null
+   
    }
    
    Ожидалось:
+   
    {
+   
    "id": 111,
+   
    "fullName": "Doctor Strange",
+   
    "birthDate": "2019-02-21",
+   
    "city": "New York",
+   
    "mainSkill": "Magic",
+   
    "gender": "F",
+   
    "phone": "+74998884433"
+   
    }
    
 2) Поле Gender звписывает любые значения (post/put)
 
    При отправки post запроса (https://superhero.qa-test.csssr.com/superheroes)
+   
    с body {
+   
    "birthDate": "2019-02-21",
+   
    "city": "New York",
+   
    "fullName": "Doctor Strange",
+   
    "gender": "vdbdr11",
+   
    "mainSkill": "Magic",
+   
    "phone": "+74998884433"
+   
    }
    
    В ответе приходит body {
+   
    "id": 112,
+   
    "fullName": "Doctor Strange",
+   
    "birthDate": "2019-02-21",
+   
    "city": "New York",
+   
    "mainSkill": "Magic",
+   
    "gender": "vdbdr11",
+   
    "phone": null
+   
    }
    
    Ожидалось: ошибка
@@ -69,22 +110,37 @@ PS: тесты можно было автоматизировать так же 
 3) city принимает пустую string (post/put)
    
    При отправки post запроса (https://superhero.qa-test.csssr.com/superheroes)
+   
    с body {
+   
    "birthDate": "2019-02-21",
+   
    "city": "",
+   
    "fullName": "Doctor Strange",
+   
    "gender": "F",
+   
    "mainSkill": "Magic"
+   
    }
    
    В ответе приходит body {
+   
    "id": 113,
+   
    "fullName": "Doctor Strange",
+   
    "birthDate": "2019-02-21",
+   
    "city": "",
+   
    "mainSkill": "Magic",
+   
    "gender": "F",
+   
    "phone": null
+   
    }
    
    Ожидалось: ошибка
@@ -112,7 +168,7 @@ PS: тесты можно было автоматизировать так же 
    Ожидалось: в обоих случаях должен приходить один и тот же список
    
 
-7) При удалении несуществуещго id код ответа 200
+6) При удалении несуществуещго id код ответа 200
    
    Отправляем delete (http://superhero.qa-test.csssr.com/superheroes/930)
    
